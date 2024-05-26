@@ -1,11 +1,15 @@
-class SingletonMeta(type):
-    _instances = {}
+from typing import Type, Any, Dict
 
-    def __call__(cls, *args, **kwargs):
+
+class SingletonMeta(type):
+    _instances: Dict[Type["Singleton"], Any] = {}
+
+    def __call__(cls: Any, *args: Any, **kwargs: Any) -> Any:
         if cls not in cls._instances:
             cls._instances[cls] = super().__call__(*args, **kwargs)
 
-        print(cls._instances)
+        # print(cls._instances)
+        print(type(cls._instances[cls]))
         return cls._instances[cls]
 
 

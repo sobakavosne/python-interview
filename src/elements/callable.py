@@ -1,10 +1,13 @@
+from typing import Any
+
+
 class Callable:
-    def __init__(self, x, y):
+    def __init__(self, x: Any, y: Any) -> None:
         self.x = x
         self.y = y
 
     # define callable instance behaviour
-    def __call__(self, z):
+    def __call__(self, z: Any) -> Any:
         """
         Call signature:
         __call__(z: int) -> int

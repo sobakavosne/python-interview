@@ -1,5 +1,7 @@
 class UppercaseAttributesMeta(type):
-    def __new__(cls, name, bases, dct):
+    def __new__(
+        cls, name: str, bases: tuple, dct: dict
+    ) -> "UppercaseAttributesMeta":
         uppercase_attrs = {}
         for name, val in dct.items():
             if not name.startswith("__"):

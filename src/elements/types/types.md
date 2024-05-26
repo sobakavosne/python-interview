@@ -1,4 +1,4 @@
-Python Type System
+**Python Type System**
 
 1. Dynamic Typing
 
@@ -59,3 +59,11 @@ class MyType:
 9. Generic Types
 
 10. Protocols (Structural Subtyping)
+
+**Immutable types in Python**
+
+• Number
+• String
+• Tuple
+• FrozenSet
+• Bytes

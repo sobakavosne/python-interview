@@ -8,7 +8,39 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+mypy_path = "src"
+disallow_untyped_defs = true
+check_untyped_defs = true
+strict_optional = true
+no_implicit_optional = true
+warn_return_any = true
+show_error_codes = true
+warn_unused_ignores = true
+explicit_package_bases = true
+
+[tool.black]
+line-length = 80
+exclude = '''
+(
+  /(
+      \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+| migrations
+)
+'''
+
+[tool.isort]
+profile = "black"

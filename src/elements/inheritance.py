@@ -2,17 +2,17 @@
 
 
 class Base:
-    def method(self):
+    def method(self) -> None:
         print("Method from Base")
 
 
 class Parent1(Base):
-    def method(self):
+    def method(self) -> None:
         print("Method from Parent1")
 
 
 class Parent2(Base):
-    def method(self):
+    def method(self) -> None:
         print("Method from Parent2")
 
 

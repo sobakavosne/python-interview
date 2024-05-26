@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 from typing import TypeVar, Generic
 
 T = TypeVar("T")
 
 
 class Box(Generic[T]):
-    def __init__(self, content: T):
+    def __init__(self, content: T) -> None:
         self.__content = content
 
     def get_content(self) -> T:
