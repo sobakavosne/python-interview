@@ -1,7 +1,13 @@
+from __future__ import annotations
+
+import inspect
+from pprint import pprint
+
+
 class UppercaseAttributesMeta(type):
     def __new__(
         cls, name: str, bases: tuple, dct: dict
-    ) -> "UppercaseAttributesMeta":
+    ) -> UppercaseAttributesMeta:
         uppercase_attrs = {}
         for name, val in dct.items():
             if not name.startswith("__"):
@@ -22,3 +28,5 @@ obj = MyClass()
 # Attributes will be uppercase
 print(hasattr(MyClass, "foo"))  # Output: False
 print(hasattr(MyClass, "FOO"))  # Output: True
+
+pprint(inspect.getmembers(obj))
